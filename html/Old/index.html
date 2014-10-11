@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Jumbotron Template for Bootstrap</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+    <script type='text/javascript' src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+
+    <script>
+
+    $(function(){
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+
+    $(window).resize(function(){
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+    });
+    });
+
+    $(function(){
+    $('#audio').css({ width: 0 + 'px', height: 0) + 'px' });
+
+    $(window).resize(function(){
+    $('#audio').css({ width: 0 + 'px', height: 0 + 'px' });
+    });
+    });
+
+    </script>
+
+   <script type='text/javascript'>//<![CDATA[ 
+    $(function(){
+    var iframe = $('#video')[0],
+        player = $f(iframe),
+        status = $('.status');
+
+    // When the player is ready, add listeners for pause, finish, and playProgress
+    player.addEvent('ready', function() {
+        status.text('ready');
+        player.api('setVolume', 0)
+    });
+
+
+    });//]]>  
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        
+    </div>
+
+
+
+
+  <iframe  id="video" width="100%" height="100%" sframeborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" src="http://player.vimeo.com/video/45201724?api=1&amp;js_api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;playbar=0&amp;player_id=okplayer&amp;loop=1&amp;autoplay=1&amp;player_id=video&amp;" width="500" height="281.25" style="position: absolute; top: -0.125px; left: 0px; width: 500px; height: 281.25px;">
+  </iframe>
+
+
+
+
+
+  
+
+    
+  </body>
+</html>

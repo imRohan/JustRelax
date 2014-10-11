@@ -1,4 +1,8 @@
 JustRelax
-=========
+=============
+---
+A one pager dedicated to downtempo music and passing time. 
 
-A website dedicated to relaxation. 
+Built over a span of a rainy evening. 
+
+![](http://i.imgur.com/ixeEo6Q.png)

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Rohan Likhite 2014 Jun06 -->
+
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://i.imgur.com/XAC1eMO.png">
+
+
+
+    <title>Just Relax</title>
+    
+   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  
+    <script type='text/javascript' src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://w.soundcloud.com/player/api.js"></script>
+    
+
+    <script>
+
+    $(function(){
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+
+    $(window).resize(function(){
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+    });
+    });
+
+   
+
+    </script>
+
+    <script>
+    var onImg= "http://i.imgur.com/9OT8Mw1.png";
+    var offImg= "http://i.imgur.com/9EcJHq8.png";
+    </script>
+
+
+   <script type='text/javascript'>//<![CDATA[ 
+    $(function(){
+    var iframe = $('#video')[0],
+        player = $f(iframe),
+        status = $('.status');
+
+    // When the player is ready, add listeners for pause, finish, and playProgress
+    player.addEvent('ready', function() {
+        status.text('ready');
+        player.api('setVolume', 0)
+    });
+
+
+    });//]]>  
+
+    </script>
+
+      <script>
+   $(document).ready(function() {
+     var widget = SC.Widget(document.getElementById('audio'));
+     widget.bind(SC.Widget.Events.READY, function() {
+       console.log('Ready...');
+     });
+     $('#nextButton').click(function() {
+       widget.next();
+     });
+     $('#toggleButton').click(function() {
+       widget.toggle();
+     });
+     $('#prevButton').click(function() {
+       widget.prev();
+     });
+   });
+  </script>
+
+    <style>
+    #logo{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    margin-top: -34px;
+    margin-left: -54px;
+    width: 109px;
+    height: 68px;
+    background-image: url(http://i.imgur.com/ZWRVD5u.png);
+    z-index: 999;
+    }
+    /*
+    #tweet{
+    position: absolute;
+    top: 96%;
+    left: 5%;
+    margin-left: -50px;
+    width: 98px;
+    height: 16px;
+    background-image: url(http://i.imgur.com/IMdR5ua.png);
+    z-index: 999;
+    }
+    */
+    #frame{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 868px;
+    height: 431px;
+    margin-left: -434px;
+    margin-top: -215px;
+    overflow: hidden;
+    box-shadow: 0 0 0 10000px #000;
+    background-image: url(http://i.imgur.com/tHzrByy.png);
+    z-index: 999;
+    }
+    #links{
+    margin-top: -50px;
+    margin-left: -56px;    
+    height:18px;
+    width:109px;
+    position: absolute;
+    top: 25%;
+    left: 9%;
+    z-index: 999;
+    }
+    #rohan{
+    position: absolute;
+    width: 40px;
+    height: 76px;
+    margin-left: -13px;
+    margin-top: -13px;
+    background-image: url(http://i.imgur.com/6bhDCc3.png);
+    z-index: 999;
+    }
+    #controls{
+    position: absolute;
+    top: 91%;
+    left: 50%;    
+    width: 300px;
+    height: 16px;
+    margin-left: -150px;
+    margin-top: -29px;
+    z-index: 999;
+    }
+
+    #back{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 120px;
+    height: 16px;
+    z-index: 999;
+
+    }
+
+    ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    }
+
+    li {
+        display: inline;
+        padding: 15px;
+    }
+</style>
+
+  </head>
+
+  <body>
+    
+
+<div id="frame"></div>
+<div id="logo" onclick="window.open('http://rohanlikhite.com','Rohan.');" ></div>
+<div id="links">
+    <ul>
+        <li><img src="http://i.imgur.com/LsMmpT9.png" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');"></li>
+        <!--<li><img src="http://i.imgur.com/KM2zhO0.png" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');"></li> SoundCloud-->
+    </ul>
+</div>
+
+<!-- Tweet Bottom Left
+<div id="tweet" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');"></div>
+-->
+<div id="controls">
+    <ul>
+        <li><img src="http://i.imgur.com/tLzGzKL.png" id="prevButton"/></li>
+        <li><img src="http://i.imgur.com/9OT8Mw1.png" id="toggleButton" onclick="this.src = this.src == offImg ? onImg : offImg;"/>
+        
+        <li><img src="http://i.imgur.com/c28OMZm.png" id="nextButton"/></li>
+    </ul>
+</div>
+
+
+
+
+<!--  Left Arrow Back Home
+
+
+    <div id="rohan" onclick="window.open('http://rohanlikhite.com','Rohan.');" ></div>
+
+-->
+
+<!--<div id="back">
+    <div id="rohan" onclick="location.href='http://rohanlikhite.com';" ></div>
+    
+
+</div>
+-->
+
+
+
+<iframe id="video" frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" width="640" height="360" src="http://www.youtube.com/embed/zw9oi0Zi4Gw?autoplay=1&amp;loop=1&amp;hd=1&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0&amp;playlist=bGY4wizlU1Y" style="position: absolute; top: -0.125px; left: 0px; width: 0px; height:0px;"></iframe>
+
+
+
+
+
+<!--
+
+  <iframe  id="video" frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" src="http://player.vimeo.com/video/45878034?api=1&amp;js_api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;playbar=0&amp;player_id=okplayer&amp;loop=1&amp;autoplay=1&amp;player_id=video&amp;" width="500" height="281.25" style="position: absolute; top: -0.125px; left: 0px; width: 500px; height: 281.25px;">
+  </iframe>
+
+-->
+
+
+
+<iframe id="audio" width="0px" height="0px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/32371377&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+
+
+
+
+
+
+  
+
+    
+  </body>
+</html>
