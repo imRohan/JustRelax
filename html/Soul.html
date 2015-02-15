@@ -16,7 +16,7 @@
 
     <title>Just Relax</title>
 
-    
+
 
     <script type='text/javascript' src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
 
@@ -27,7 +27,7 @@
     <script src="../js/jquery.knob.js"></script>
 
 
-   
+
 
     <script>
         $(function () {
@@ -58,7 +58,7 @@
                 player = $f(iframe),
                 status = $('.status');
 
-            // When the player is ready, add listeners for pause, finish, and playProgress
+
             player.addEvent('ready', function () {
                 status.text('ready');
                 player.api('setVolume', 100)
@@ -84,28 +84,28 @@
             $('#prevButton').click(function () {
                 widget.prev();
             });
-            
-             $(".knob").knob({
-               
-               
+
+            $(".knob").knob({
+
+
                 release: function (value) {
                     //console.log(this.$.attr('value'));
                     console.log("release : " + value);
                     document.getElementById('audio').scrollIntoView();
-                    widget.setVolume(value/100);
+                    widget.setVolume(value / 100);
                 },
-             });
+            });
         });
     </script>
-    
-     <script>
+
+    <script>
         $(function ($) {
 
             $(".knob").knob({
-                
+
                 change: function (value) {
                     console.log("change : " + value);
-                   
+
                 },
                 release: function (value) {
                     //console.log(this.$.attr('value'));
@@ -115,11 +115,11 @@
                 cancel: function () {
                     console.log("cancel : ", this);
                 },
-                
+
                 draw: function () {
 
-                    
-                   
+
+
                 }
             });
 
@@ -129,23 +129,22 @@
 
 
     <style>
-        #body{
-         height:100%;
+        #body {
+            height: 100%;
             overflow: hidden;
-            
         }
         #logo {
             position: absolute;
             top: 10%;
             left: 10%;
-            margin-top: -34px;
-            margin-left: -54px;
-            width: 109px;
-            height: 68px;
-            background-image: url(http://i.imgur.com/ZWRVD5u.png);
+            margin-top: -40px;
+            margin-left: -84px;
+            width: 90px;
+            height: 85px;
+            background-image: url(http://i.imgur.com/eW5SXUx.png);
+            background-size: 90px 85px;
             z-index: 999;
         }
-        
         #frame {
             position: absolute;
             top: 50%;
@@ -207,14 +206,13 @@
             display: inline;
             padding: 15px;
         }
-        .volumeCont{
-            position:absolute;
-            margin-top:-54px;
+        .volumeCont {
+            position: absolute;
+            margin-top: -54px;
             background-image: url("http://i.imgur.com/Lwgzcqp.png");
             background-repeat: no-repeat;
             margin-left: -40px;
             z-index: 1000;
-           
         }
     </style>
 
@@ -241,17 +239,10 @@
         <ul>
             <li>
                 <div class="volumeCont">
-        
-            <input class="knob"  data-width="50"
-                   data-displayInput=false
-            data-fgColor="limegreen"
-                   data-bgColor="black"
-            data-skin="tron"
-            data-thickness=".1"
-            data-displayPrevious=true
-                   value="100">
-        </div>
-                <!--<img src="http://i.imgur.com/tLzGzKL.png" id="prevButton" />-->
+
+                    <input class="knob" data-width="50" data-displayInput=false data-fgColor="limegreen" data-bgColor="black" data-skin="tron" data-thickness=".1" data-displayPrevious=true value="74">
+                </div>
+
             </li>
             <li>
                 <img src="http://i.imgur.com/PEm5B0J.png" id="toggleButton" onclick="this.src = this.src == offImg ? onImg : offImg;" />
@@ -261,14 +252,14 @@
                 </li>
         </ul>
 
-       
+
     </div>
 
 
 
 
 
- 
+
 
 
 
@@ -279,12 +270,6 @@
 
 
 
-    <!--
-
-  <iframe  id="video" frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" src="http://player.vimeo.com/video/45878034?api=1&amp;js_api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;playbar=0&amp;player_id=okplayer&amp;loop=1&amp;autoplay=1&amp;player_id=video&amp;" width="500" height="281.25" style="position: absolute; top: -0.125px; left: 0px; width: 500px; height: 281.25px;">
-  </iframe>
-
--->
 
 
 
