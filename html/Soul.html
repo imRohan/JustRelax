@@ -27,26 +27,96 @@
     <script src="../js/jquery.knob.js"></script>
 
 
+   
+
     <script>
+        $(function () {
+            $('#video').css({
+                width: $(window).innerWidth() + 'px',
+                height: $(window).innerHeight() + 'px'
+            });
+
+            $(window).resize(function () {
+                $('#video').css({
+                    width: $(window).innerWidth() + 'px',
+                    height: $(window).innerHeight() + 'px'
+                });
+            });
+        });
+    </script>
+
+    <script>
+        var onImg = "http://i.imgur.com/9OT8Mw1.png";
+        var offImg = "http://i.imgur.com/9EcJHq8.png";
+    </script>
+
+
+    <script type='text/javascript'>
+        //<![CDATA[ 
+        $(function () {
+            var iframe = $('#video')[0],
+                player = $f(iframe),
+                status = $('.status');
+
+            // When the player is ready, add listeners for pause, finish, and playProgress
+            player.addEvent('ready', function () {
+                status.text('ready');
+                player.api('setVolume', 100)
+            });
+
+
+        }); //]]>
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var widget = SC.Widget(document.getElementById('audio'));
+            widget.bind(SC.Widget.Events.READY, function () {
+                console.log('Ready...');
+            });
+            $('#nextButton').click(function () {
+                widget.next();
+            });
+            $('#volumeCont').click(function () {
+                widget.toggle();
+            });
+            $('#prevButton').click(function () {
+                widget.prev();
+            });
+            
+             $(".knob").knob({
+               
+               
+                release: function (value) {
+                    //console.log(this.$.attr('value'));
+                    console.log("release : " + value);
+                    widget.setVolume(value/100);
+                },
+             });
+        });
+    </script>
+    
+     <script>
         $(function ($) {
 
             $(".knob").knob({
+                
                 change: function (value) {
-                    //console.log("change : " + value);
+                    console.log("change : " + value);
+                   
                 },
                 release: function (value) {
                     //console.log(this.$.attr('value'));
                     console.log("release : " + value);
+                    //widget.setVolume(value);
                 },
                 cancel: function () {
                     console.log("cancel : ", this);
                 },
-                /*format : function (value) {
-                        return value + '%';
-                    },*/
+                
                 draw: function () {
 
-                    // "tron" case
+                    
                     if (this.$.data('skin') == 'tron') {
 
                         this.cursorExt = 0.3;
@@ -86,63 +156,6 @@
         });
     </script>
 
-
-    <script>
-        $(function () {
-            $('#video').css({
-                width: $(window).innerWidth() + 'px',
-                height: $(window).innerHeight() + 'px'
-            });
-
-            $(window).resize(function () {
-                $('#video').css({
-                    width: $(window).innerWidth() + 'px',
-                    height: $(window).innerHeight() + 'px'
-                });
-            });
-        });
-    </script>
-
-    <script>
-        var onImg = "http://i.imgur.com/9OT8Mw1.png";
-        var offImg = "http://i.imgur.com/9EcJHq8.png";
-    </script>
-
-
-    <script type='text/javascript'>
-        //<![CDATA[ 
-        $(function () {
-            var iframe = $('#video')[0],
-                player = $f(iframe),
-                status = $('.status');
-
-            // When the player is ready, add listeners for pause, finish, and playProgress
-            player.addEvent('ready', function () {
-                status.text('ready');
-                player.api('setVolume', 0)
-            });
-
-
-        }); //]]>
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            var widget = SC.Widget(document.getElementById('audio'));
-            widget.bind(SC.Widget.Events.READY, function () {
-                console.log('Ready...');
-            });
-            $('#nextButton').click(function () {
-                widget.next();
-            });
-            $('#toggleButton').click(function () {
-                widget.toggle();
-            });
-            $('#prevButton').click(function () {
-                widget.prev();
-            });
-        });
-    </script>
 
     <style>
         #logo {
@@ -233,6 +246,7 @@
             position:absolute;
             margin-top:-15px;
             margin-left: 82px;
+            z-index:1000;
         }
     </style>
 
@@ -268,22 +282,23 @@
                 </li>
         </ul>
 
-        <div class="volumeCont">
-        
-            <input class="knob"  data-width="80"
-                   data-displayInput=false
-            data-fgColor="limegreen"
-            data-skin="tron"
-            data-thickness=".2"
-            data-displayPrevious=true>
-        </div>
+       
     </div>
 
 
 
 
 
-
+ <div class="volumeCont">
+        
+            <input class="knob"  data-width="80"
+                   data-displayInput=false
+            data-fgColor="limegreen"
+            data-skin="tron"
+            data-thickness=".2"
+            data-displayPrevious=true
+                   value="100">
+        </div>
 
 
 
