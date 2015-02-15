@@ -16,7 +16,7 @@
 
     <title>Just Relax</title>
 
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    
 
     <script type='text/javascript' src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
 
@@ -75,9 +75,10 @@
                 console.log('Ready...');
             });
             $('#nextButton').click(function () {
-                widget.next();
+                var shuffleValue = Math.floor(Math.random() * 100) + 1;
+                widget.skip(shuffleValue);
             });
-            $('#volumeCont').click(function () {
+            $('#toggleButton').click(function () {
                 widget.toggle();
             });
             $('#prevButton').click(function () {
@@ -90,6 +91,7 @@
                 release: function (value) {
                     //console.log(this.$.attr('value'));
                     console.log("release : " + value);
+                    document.getElementById('audio').scrollIntoView();
                     widget.setVolume(value/100);
                 },
              });
@@ -117,38 +119,7 @@
                 draw: function () {
 
                     
-                    if (this.$.data('skin') == 'tron') {
-
-                        this.cursorExt = 0.3;
-
-                        var a = this.arc(this.cv) // Arc
-                            ,
-                            pa // Previous arc
-                            , r = 1;
-
-                        this.g.lineWidth = this.lineWidth;
-
-                        if (this.o.displayPrevious) {
-                            pa = this.arc(this.v);
-                            this.g.beginPath();
-                            this.g.strokeStyle = this.pColor;
-                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
-                            this.g.stroke();
-                        }
-
-                        this.g.beginPath();
-                        this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
-                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
-                        this.g.stroke();
-
-                        this.g.lineWidth = 2;
-                        this.g.beginPath();
-                        this.g.strokeStyle = this.o.fgColor;
-                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
-                        this.g.stroke();
-
-                        return false;
-                    }
+                   
                 }
             });
 
@@ -158,6 +129,11 @@
 
 
     <style>
+        #body{
+         height:100%;
+            overflow: hidden;
+            
+        }
         #logo {
             position: absolute;
             top: 10%;
@@ -169,18 +145,7 @@
             background-image: url(http://i.imgur.com/ZWRVD5u.png);
             z-index: 999;
         }
-        /*
-    #tweet{
-    position: absolute;
-    top: 96%;
-    left: 5%;
-    margin-left: -50px;
-    width: 98px;
-    height: 16px;
-    background-image: url(http://i.imgur.com/IMdR5ua.png);
-    z-index: 999;
-    }
-    */
+        
         #frame {
             position: absolute;
             top: 50%;
@@ -219,9 +184,9 @@
             left: 50%;
             width: 300px;
             height: 16px;
-            margin-left: -150px;
+            margin-left: -120px;
             margin-top: -29px;
-            z-index: 999;
+            z-index: 1000;
         }
         #back {
             position: absolute;
@@ -244,9 +209,12 @@
         }
         .volumeCont{
             position:absolute;
-            margin-top:-15px;
-            margin-left: 82px;
-            z-index:1000;
+            top: 10%;
+            left: 50%;
+            
+          margin-left: -25px;
+            z-index: 1000;
+           
         }
     </style>
 
@@ -291,11 +259,12 @@
 
  <div class="volumeCont">
         
-            <input class="knob"  data-width="80"
+            <input class="knob"  data-width="50"
                    data-displayInput=false
             data-fgColor="limegreen"
+                   data-bgColor="black"
             data-skin="tron"
-            data-thickness=".2"
+            data-thickness=".1"
             data-displayPrevious=true
                    value="100">
         </div>
