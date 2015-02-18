@@ -2,6 +2,8 @@
 <html lang="en">
 
 <!--Rohan Likhite 2014 Jun06 -->
+    
+
 
 <head>
 
@@ -24,7 +26,7 @@
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="http://w.soundcloud.com/player/api.js"></script>
-    <script src="../js/jquery.knob.js"></script>
+    <script src="js/jquery.knob.js"></script>
 
 
 
@@ -184,7 +186,7 @@
             width: 300px;
             height: 16px;
             margin-left: -70px;
-            margin-top: -29px;
+            margin-top: -30px;
             z-index: 1000;
         }
         #back {
@@ -214,13 +216,35 @@
             margin-left: -40px;
             z-index: 1000;
         }
+        #mobile{
+        visibility: hidden;
+        }
+        @media (min-width: 320px) and (max-width: 568px) {
+        #content{
+            visibility: hidden;
+        }
+            #mobile{
+        visibility:visible;
+        }
+        
+        @media (min-width: 600px) and (max-width: 800px) {
+         #content{
+            visibility: hidden;
+        }
+            #mobile{
+        visibility:visible;
+        }
+        }
     </style>
 
 </head>
 
 <body>
+    <div id="mobile">
+    Please view this website on a desktop with a decent set of speakers plugged in.
+    </div>
 
-
+<div id="content">
     <div id="frame"></div>
     <div id="logo" onclick="window.open('http://rohanlikhite.com','Rohan.');"></div>
     <div id="links">
@@ -228,13 +252,10 @@
             <li>
                 <img src="http://i.imgur.com/LsMmpT9.png" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');">
             </li>
-            <!--<li><img src="http://i.imgur.com/KM2zhO0.png" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');"></li> SoundCloud-->
+
         </ul>
     </div>
 
-    <!-- Tweet Bottom Left
-<div id="tweet" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');"></div>
--->
     <div id="controls">
         <ul>
             <li>
@@ -278,7 +299,7 @@
 
 
 
-
+    </div>
 
 
 
