@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!--Rohan Likhite 2014 Jun06 -->
-    
+
 
 
 <head>
@@ -28,7 +28,9 @@
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="http://w.soundcloud.com/player/api.js"></script>
     <script src="js/jquery.knob.js"></script>
-    
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
 
 
 
@@ -75,15 +77,30 @@
     <script>
         $(document).ready(function () {
             var widget = SC.Widget(document.getElementById('audio'));
+            var trackInfo = document.getElementById('trackInfo');
+            var genre = document.getElementById('genre');
+            var bpm = document.getElementById('bpm');
+            var type = document.getElementById('type');
+            var albumArt = document.getElementById('albumArt');
+
+
             widget.bind(SC.Widget.Events.READY, function () {
                 console.log('Ready...');
-                
+
                 widget.bind(SC.Widget.Events.PLAY, function () {
-            // get information about currently playing sound
-            widget.getCurrentSound(function (currentSound) {
-                console.log(currentSound.title);
-            });
-        });
+
+                    widget.getCurrentSound(function (currentSound) {
+                        console.log(currentSound.title);
+                        trackInfo.innerHTML = currentSound.title;
+                        albumArt.src = currentSound.artwork_url;
+                        /*
+                genre.innerHTML = currentSound.genre;
+                bpm.innerHTML = currentSound.bpm;
+                type.innerHTML = currentSound.track_type;
+                */
+
+                    });
+                });
             });
             $('#nextButton').click(function () {
                 var shuffleValue = Math.floor(Math.random() * 100) + 1;
@@ -178,7 +195,31 @@
             top: 25%;
             left: 9%;
             z-index: 999;
-            color:white;
+            color: white;
+        }
+        #trackDeets {
+            margin-top: -12px;
+            margin-left: -200px;
+            height: 110px;
+            width: 400px;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            z-index: 999;
+            color: #999;
+            background-color: black;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 1em;
+            text-align: left;
+        }
+        img.center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+            opacity: 0.5;
         }
         #rohan {
             position: absolute;
@@ -198,6 +239,19 @@
             margin-left: -70px;
             margin-top: -30px;
             z-index: 1000;
+        }
+        #trackInfo {
+            position: absolute;
+            bottom: 0px;
+            background-color: black;
+            width: 100%;
+            height: 20px;
+            color: #999;
+            z-index: 1000;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 1em;
+            text-align: center;
         }
         #back {
             position: absolute;
@@ -226,80 +280,86 @@
             margin-left: -40px;
             z-index: 1000;
         }
-        #next{
-        
-        float:left;
-        width:auto;
-        margin-left:130px;
-            margin-top:-53px;
+        #next {
+            float: left;
+            width: auto;
+            margin-left: 130px;
+            margin-top: -53px;
         }
-        #next:active{
+        #next:active {
             margin-top: -50px;
         }
-        #mobile{
-        visibility: hidden;
+        #mobile {
+            visibility: hidden;
         }
         @media (min-width: 320px) and (max-width: 568px) {
-        #content{
-            visibility: hidden;
-        }
-            #mobile{
-        visibility:visible;
-        }
-        
-        @media (min-width: 600px) and (max-width: 800px) {
-         #content{
-            visibility: hidden;
-        }
-            #mobile{
-        visibility:visible;
-        }
-        }
-            
+            #content {
+                visibility: hidden;
+            }
+            #mobile {
+                visibility: visible;
+            }
+            @media (min-width: 600px) and (max-width: 800px) {
+                #content {
+                    visibility: hidden;
+                }
+                #mobile {
+                    visibility: visible;
+                }
+            }
     </style>
 
 </head>
 
 <body>
     <div id="mobile">
-    Please view this website on a desktop with a decent set of speakers plugged in.
+        Please view this website on a desktop with a decent set of speakers plugged in.
     </div>
 
-<div id="content">
-    <div id="frame"></div>
-    <div id="logo" onclick="window.open('http://rohanlikhite.com','Rohan.');" class="animated bounceIn"></div>
-    <div id="links">
-        sadasd
-        <ul>
-            <li>
-                <img src="http://i.imgur.com/LsMmpT9.png" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');">
-            </li>
+    <div id="content">
+        <div id="frame"></div>
+        <div id="logo" onclick="window.open('http://rohanlikhite.com','Rohan.');" class="animated bounceIn"></div>
+        <div id="links">
 
-        </ul>
-    </div>
-
-    <div id="controls">
-        <ul class="animated bounceIn">
-            <li>
-                <div class="volumeCont">
-
-                    <input class="knob" data-width="50" data-displayInput=false data-fgColor="limegreen" data-bgColor="black" data-skin="tron" data-thickness=".1" data-displayPrevious=true value="74">
-                </div>
-
-            </li>
-            <li>
-                <img src="http://i.imgur.com/PEm5B0J.png" id="toggleButton" onclick="this.src = this.src == offImg ? onImg : offImg;" />
-
+            <ul>
                 <li>
-                    <div id="next">
-                    <img src="http://i.imgur.com/0E6P5kU.png" id="nextButton" />
-                    </div>
-                    
+                    <img src="http://i.imgur.com/LsMmpT9.png" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');">
                 </li>
-        </ul>
+
+            </ul>
+        </div>
+        <div id="trackDeets">
+            <!--
+    Genre: <span id="genre"></span> <br/>
+    BPM:<span id="bpm"></span> <br/>
+    Type:<span id="type"></span> <br/>-->
+            <img class="center" id="albumArt" src="" width="80" height="80">
+            <div id="trackInfo"></div>
+
+        </div>
+
+        <div id="controls">
+            <ul class="animated bounceIn">
+                <li>
+                    <div class="volumeCont">
+
+                        <input class="knob" data-width="50" data-displayInput=false data-fgColor="limegreen" data-bgColor="black" data-skin="tron" data-thickness=".1" data-displayPrevious=true value="74">
+                    </div>
+
+                </li>
+                <li>
+                    <img src="http://i.imgur.com/PEm5B0J.png" id="toggleButton" onclick="this.src = this.src == offImg ? onImg : offImg;" />
+
+                    <li>
+                        <div id="next">
+                            <img src="http://i.imgur.com/0E6P5kU.png" id="nextButton" />
+                        </div>
+
+                    </li>
+            </ul>
 
 
-    </div>
+        </div>
 
 
 
@@ -310,7 +370,7 @@
 
 
 
-    <iframe id="video" frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" width="640" height="360" src="http://www.youtube.com/embed/zw9oi0Zi4Gw?autoplay=1&amp;loop=1&amp;hd=1&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0&amp;playlist=bGY4wizlU1Y" style="position: absolute; top: -0.125px; left: 0px; width: 0px; height:0px;"></iframe>
+        <iframe id="video" frameborder="0" scrolling="no" seamless="seamless" webkitallowfullscreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="okplayer" width="640" height="360" src="http://www.youtube.com/embed/zw9oi0Zi4Gw?autoplay=1&amp;loop=1&amp;hd=1&amp;controls=0&amp;showinfo=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;rel=0&amp;playlist=bGY4wizlU1Y" style="position: absolute; top: -0.125px; left: 0px; width: 0px; height:0px;"></iframe>
 
 
 
@@ -319,7 +379,7 @@
 
 
 
-    <iframe id="audio" width="0px" height="0px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/32371377&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <iframe id="audio" width="0px" height="0px" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/32371377&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 
 
 
