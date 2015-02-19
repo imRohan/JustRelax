@@ -19,14 +19,15 @@
     <title>Just Relax</title>
 
 
+    <link rel="stylesheet" type="text/css" href="assets/component.css">
+    <link rel="stylesheet" type="text/css" href="assets/animate.css">
 
     <script type='text/javascript' src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="http://w.soundcloud.com/player/api.js"></script>
     <script src="js/jquery.knob.js"></script>
+    
 
 
 
@@ -183,7 +184,7 @@
             position: absolute;
             top: 91%;
             left: 50%;
-            width: 300px;
+            width: 190px;
             height: 16px;
             margin-left: -70px;
             margin-top: -30px;
@@ -216,6 +217,16 @@
             margin-left: -40px;
             z-index: 1000;
         }
+        #next{
+        
+        float:left;
+        width:auto;
+        margin-left:130px;
+            margin-top:-53px;
+        }
+        #next:active{
+            margin-top: -50px;
+        }
         #mobile{
         visibility: hidden;
         }
@@ -235,6 +246,7 @@
         visibility:visible;
         }
         }
+            
     </style>
 
 </head>
@@ -246,7 +258,7 @@
 
 <div id="content">
     <div id="frame"></div>
-    <div id="logo" onclick="window.open('http://rohanlikhite.com','Rohan.');"></div>
+    <div id="logo" onclick="window.open('http://rohanlikhite.com','Rohan.');" class="animated bounceIn"></div>
     <div id="links">
         <ul>
             <li>
@@ -257,7 +269,7 @@
     </div>
 
     <div id="controls">
-        <ul>
+        <ul class="animated bounceIn">
             <li>
                 <div class="volumeCont">
 
@@ -269,7 +281,10 @@
                 <img src="http://i.imgur.com/PEm5B0J.png" id="toggleButton" onclick="this.src = this.src == offImg ? onImg : offImg;" />
 
                 <li>
+                    <div id="next">
                     <img src="http://i.imgur.com/0E6P5kU.png" id="nextButton" />
+                    </div>
+                    
                 </li>
         </ul>
 
