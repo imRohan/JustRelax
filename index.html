@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" type="text/css" href="assets/component.css">
     <link rel="stylesheet" type="text/css" href="assets/animate.css">
+    <link rel="stylesheer" type="text/css" href="assets/hint.base.min.css">
 
     <script type='text/javascript' src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -76,6 +77,13 @@
             var widget = SC.Widget(document.getElementById('audio'));
             widget.bind(SC.Widget.Events.READY, function () {
                 console.log('Ready...');
+                
+                widget.bind(SC.Widget.Events.PLAY, function () {
+            // get information about currently playing sound
+            widget.getCurrentSound(function (currentSound) {
+                console.log(currentSound.title);
+            });
+        });
             });
             $('#nextButton').click(function () {
                 var shuffleValue = Math.floor(Math.random() * 100) + 1;
@@ -170,6 +178,7 @@
             top: 25%;
             left: 9%;
             z-index: 999;
+            color:white;
         }
         #rohan {
             position: absolute;
@@ -260,6 +269,7 @@
     <div id="frame"></div>
     <div id="logo" onclick="window.open('http://rohanlikhite.com','Rohan.');" class="animated bounceIn"></div>
     <div id="links">
+        sadasd
         <ul>
             <li>
                 <img src="http://i.imgur.com/LsMmpT9.png" onclick="window.open('https://twitter.com/intent/tweet?text=Just%20Relax%2C%20a%20beautifully%20crafted%20minimal%20website%20which%20plays%20a%20continuous%20mix%20of%20deep%20house%20and%20downtempo%20music.%20http%3A%2F%2Frohanlikhite.com%2Frelax%20','Rohan.');">
