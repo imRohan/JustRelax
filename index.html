@@ -155,7 +155,7 @@
         });
     </script>
 
-
+<!-- no external stylesheet, because why not -->
     <style>
         #body {
             height: 100%;
@@ -198,13 +198,13 @@
             color: white;
         }
         #trackDeets {
-            margin-top: -12px;
-            margin-left: -200px;
-            height: 110px;
+            
+            
+            height: auto;
             width: 400px;
             position: absolute;
-            top: 5%;
-            left: 50%;
+            bottom: 3%;
+            left: 5%;
             z-index: 999;
             color: #999;
             background-color: black;
@@ -213,13 +213,10 @@
             font-size: 1em;
             text-align: left;
         }
-        img.center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        img.circle {
             -webkit-border-radius: 50px;
             border-radius: 50px;
-            opacity: 0.5;
+            opacity: 0.9;
         }
         #rohan {
             position: absolute;
@@ -232,7 +229,7 @@
         }
         #controls {
             position: absolute;
-            top: 91%;
+            top: 90%;
             left: 50%;
             width: 190px;
             height: 16px;
@@ -241,17 +238,17 @@
             z-index: 1000;
         }
         #trackInfo {
-            position: absolute;
-            bottom: 0px;
+           margin-top:-26px;
             background-color: black;
-            width: 100%;
+            width: 700px;
             height: 20px;
             color: #999;
             z-index: 1000;
             font-family: 'Raleway', sans-serif;
             font-weight: 300;
             font-size: 1em;
-            text-align: center;
+            text-align: left;
+            margin-left: 40px;
         }
         #back {
             position: absolute;
@@ -333,8 +330,8 @@
     Genre: <span id="genre"></span> <br/>
     BPM:<span id="bpm"></span> <br/>
     Type:<span id="type"></span> <br/>-->
-            <img class="center" id="albumArt" src="" width="80" height="80">
-            <div id="trackInfo"></div>
+           
+            <img class="circle" id="albumArt" src="" width="30" height="30"><div id="trackInfo"></div>
 
         </div>
 
