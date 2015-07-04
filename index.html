@@ -32,7 +32,7 @@
     <script src="js/jquery.knob.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
 
@@ -88,12 +88,10 @@
 
 
             widget.bind(SC.Widget.Events.READY, function () {
-                console.log('Ready...');
-
+                $('#nextButton').click();
                 widget.bind(SC.Widget.Events.PLAY, function () {
 
                     widget.getCurrentSound(function (currentSound) {
-                        console.log(currentSound.title);
                         trackInfo.innerHTML = currentSound.title;
                         albumArt.src = currentSound.artwork_url;
                         /*
@@ -106,7 +104,7 @@
                 });
             });
             $('#nextButton').click(function () {
-                var shuffleValue = Math.floor(Math.random() * 120) + 1;
+                var shuffleValue = Math.floor(Math.random() * 138) + 1;
                 widget.skip(shuffleValue);
             });
             $('#toggleButton').click(function () {
