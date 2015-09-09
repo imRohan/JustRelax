@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="http://i.imgur.com/XAC1eMO.png">
+    <link id='favicon' rel="shortcut icon" href="http://i.imgur.com/XAC1eMO.png">
 
 
 
@@ -93,7 +93,9 @@
 
                     widget.getCurrentSound(function (currentSound) {
                         trackInfo.innerHTML = currentSound.title;
+                        document.title = currentSound.title;
                         albumArt.src = currentSound.artwork_url;
+                        $("#favicon").attr("href",currentSound.artwork_url);
                         /*
                 genre.innerHTML = currentSound.genre;
                 bpm.innerHTML = currentSound.bpm;
